@@ -14,9 +14,11 @@ $ chmod a+x ~/bin/repo
 
 Now, we create our build directories and pull the right source:
 
-$ cd ~/android/system/
-$ repo init -u git://github.com/CyanogenMod/android.git -b froyo-stable
-$ repo sync -j16
+    cd ~/android/system/
+    
+    repo init -u git://github.com/CyanogenMod/android.git -b froyo-stable
+    
+    repo sync -j16
 
 Extract necessary binaries and proprietary files
 ------------------------------------------------
