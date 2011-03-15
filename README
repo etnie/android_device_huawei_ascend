@@ -1,0 +1,3 @@
+Device configurations for build CM6 Froyo-stable branch. 
+
+NOTE: **I have not added vendor/cyanogen, so the appropriate changes will need to be made in order build correctly.**
