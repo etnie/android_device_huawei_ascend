@@ -1,8 +1,7 @@
-Device configurations to build the CM6 Froyo-stable branch. 
+HOW-TO BUILD:
+=============
 
-NOTE: **I have not added vendor/cyanogen, so the appropriate changes will need to be made in order build correctly.**
-
-HOW-TO BUILD (Assuming you're on Ubuntu 10.10):
+**This short guide assumes you're on Ubuntu 10.10**
 
 Getting the (right) source
 --------------------------
