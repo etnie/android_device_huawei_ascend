@@ -22,12 +22,11 @@ Extract necessary binaries and proprietary files
 ------------------------------------------------
 
 We will re-use some proprietary files from the original Eclair ROM. 
-The files can be extracted from any Ascend Eclair ROM (including Icarus 1.X):
+The files can be extracted from any Ascend running an Eclair ROM (including Icarus 1.X):
 
 $ cd
 $ cd ~/android/system/device/huawei/ascend/
 $ ./extract-files.sh
-
 
 Building CM6
 -------------
@@ -45,6 +44,7 @@ $ ~/android/system/vendor/cyanogen/get-rommanager
 
 Now, we build:
 
+$ cd ~/android/system
 $ . build/envsetup.sh
 $ lunch cyanogen_ascend-eng
 $ make -j`grep 'processor' /proc/cpuinfo | wc -l` bacon
