@@ -8,8 +8,9 @@ Getting the (right) source
 
 Ensure that you have repo installed. Download and install repo like so:
 
-$ curl http://android.git.kernel.org/repo > ~/bin/repo
-$ chmod a+x ~/bin/repo
+    $ curl http://android.git.kernel.org/repo > ~/bin/repo
+    
+    $ chmod a+x ~/bin/repo
 
 Now, we create our build directories and pull the right source:
 
