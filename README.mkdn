@@ -52,17 +52,4 @@ Now, we build:
 
 Installing CM7
 ---------------
-
-We have non-standard pagesize in our boot and recovery images. Mkbootimg has to be adjusted in order to accommodate the padding (4096), but for the sake of time, we'll just flash the images.
-
-    $ cd
-    
-    $ cd ~/android/system/out/target/product/ascend
-    
-    $ fastboot flash boot boot.img
-    
-    $ fastboot flash system system.img
-    
-    $ fastboot flash userdata userdata.img
-    
-    $ fastboot reboot
+Assuming you've made the necessary changes to mkbootimg, you can now take the update zip found in out/target/product/ascend/ and flash using a custom recovery.
