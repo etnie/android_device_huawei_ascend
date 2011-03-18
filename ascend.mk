@@ -103,7 +103,7 @@ PRODUCT_COPY_FILES += \
 # Sound and OMX
 PRODUCT_COPY_FILES += \
     device/huawei/ascend/AudioFilter.csv:system/etc/AudioFilter.csv \
-    device/huawei/ascend/files/AutoVolumeControl.txt:/system/etc/AutoVolumeControl.txt \
+    device/huawei/ascend/files/etc/AutoVolumeControl.txt:/system/etc/AutoVolumeControl.txt \
     vendor/huawei/ascend/proprietary/libmm-adspsvc.so:system/lib/libmm-adspsvc.so \
     vendor/huawei/ascend/proprietary/libOmxH264Dec.so:system/lib/libOmxH264Dec.so \
     vendor/huawei/ascend/proprietary/libOmxMpeg4Dec.so:system/lib/libOmxMpeg4Dec.so \
