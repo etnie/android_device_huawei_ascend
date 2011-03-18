@@ -25,7 +25,7 @@ LOCAL_MODULE_PATH := $(TARGET_OUT_SHARED_LIBRARIES)/hw
 LOCAL_SHARED_LIBRARIES := liblog
 LOCAL_SRC_FILES := copybit.cpp
 LOCAL_MODULE := copybit.M860
-LOCAL_C_INCLUDES += hardware/msm7k/libgralloc
-LOCAL_CFLAGS += -DCOPYBIT_MSM7K=1
+LOCAL_C_INCLUDES += device/huawei/ascend/libgralloc
+LOCAL_CFLAGS += -DCOPYBIT_M860=1
 include $(BUILD_SHARED_LIBRARY)
 endif
