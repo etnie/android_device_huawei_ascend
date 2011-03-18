@@ -1,4 +1,4 @@
-$(call inherit-product, $(SRC_TARGET_DIR)/product/languages_full.mk)
+$(call inherit-product, $(SRC_TARGET_DIR)/product/languages_small.mk)
 
 # The gps config appropriate for this device
 $(call inherit-product, device/common/gps/gps_us_supl.mk)
@@ -18,8 +18,9 @@ PRODUCT_COPY_FILES += \
     $(LOCAL_KERNEL):kernel
 
 PRODUCT_PACKAGES += \
+    librs_jni \
     libOmxCore \
-    gralloc.msm7k \
+    gralloc.M860 \
     copybit.M860 \
     gps.M860 \
     libcamera \
@@ -32,7 +33,7 @@ PRODUCT_COPY_FILES += \
 
 # Board-specific init
 PRODUCT_COPY_FILES += \
-    device/huawei/ascend/include/initlogo.rle:root/initlogo.rle
+    device/huawei/ascend/files/etc/initlogo.rle:root/initlogo.rle
 
 # DHCP config for wifi
 PRODUCT_COPY_FILES += \
@@ -50,6 +51,15 @@ PRODUCT_COPY_FILES += \
     frameworks/base/data/etc/android.hardware.wifi.xml:system/etc/permissions/android.hardware.wifi.xml \
     frameworks/base/data/etc/android.hardware.touchscreen.xml:system/etc/permissions/android.hardware.touchscreen.xml
 
+# Keychars and keylayout files
+PRODUCT_COPY_FILES += \
+    device/huawei/ascend/keychars/surf_keypad.kcm.bin:system/usr/keychars/surf_keypad.kcm.bin \
+    device/huawei/ascend/keychars/qwerty.kcm.bin:system/usr/keychars/qwerty.kcm.bin \
+    device/huawei/ascend/keychars/qwerty2.kcm.bin:system/usr/keychars/qwerty2.kcm.bin \
+    device/huawei/ascend/keylayout/AVRCP.kl:system/usr/keylayout/AVRCP.kl \
+    device/huawei/ascend/keylayout/surf_keypad.kl:system/usr/keylayout/surf_keypad.kl \
+    device/huawei/ascend/keylayout/qwerty.kl:system/usr/keylayout/qwerty.kl
+
 PRODUCT_PROPERTY_OVERRIDES := \
     wifi.interface=eth0 \
     wifi.supplicant_scan_interval=15 \
@@ -65,9 +75,9 @@ PRODUCT_PROPERTY_OVERRIDES += \
 PRODUCT_PROPERTY_OVERRIDES += \
     ro.opengles.version=65536
 
-# Disable JIT by default
+# Enable JIT by default
 PRODUCT_PROPERTY_OVERRIDES += \
-    dalvik.vm.execution-mode=int:fast \
+    dalvik.vm.execution-mode=int:jit \
     persist.sys.use_dithering=0
 
 # Don't put dexfiles in /cache on ascend
@@ -93,7 +103,7 @@ PRODUCT_COPY_FILES += \
 # Sound and OMX
 PRODUCT_COPY_FILES += \
     device/huawei/ascend/AudioFilter.csv:system/etc/AudioFilter.csv \
-    device/huawei/ascend/include/AutoVolumeControl.txt:/system/etc/AutoVolumeControl.txt \
+    device/huawei/ascend/files/AutoVolumeControl.txt:/system/etc/AutoVolumeControl.txt \
     vendor/huawei/ascend/proprietary/libmm-adspsvc.so:system/lib/libmm-adspsvc.so \
     vendor/huawei/ascend/proprietary/libOmxH264Dec.so:system/lib/libOmxH264Dec.so \
     vendor/huawei/ascend/proprietary/libOmxMpeg4Dec.so:system/lib/libOmxMpeg4Dec.so \
@@ -104,9 +114,16 @@ PRODUCT_COPY_FILES += \
     vendor/huawei/ascend/proprietary/sensors.default.so:/system/lib/hw/sensors.default.so \
     vendor/huawei/ascend/proprietary/lights.msm7k.so:/system/lib/hw/lights.msm7k.so
 
+# GPS
+PRODUCT_COPY_FILES += \
+    vendor/huawei/ascend/proprietary/libcommondefs.so:/system/lib/libcommondefs.so \
+    vendor/huawei/ascend/proprietary/libloc_api.so:obj/lib/libloc_api.so \
+    vendor/huawei/ascend/proprietary/libloc_api.so:/system/lib/libloc_api.so \
+    vendor/huawei/ascend/proprietary/libloc_api-rpc.so:/system/lib/libloc_api-rpc.so
+
 # Proprietary RIL related
 PRODUCT_COPY_FILES += \
-    device/huawei/ascend/include/apns-conf.xml:/system/etc/apns-conf.xml \
+    device/huawei/ascend/files/etc/apns-conf.xml:/system/etc/apns-conf.xml \
     vendor/huawei/ascend/proprietary/libauth.so:/system/lib/libauth.so \
     vendor/huawei/ascend/proprietary/libril-qc-1.so:/system/lib/libril-qc-1.so \
     vendor/huawei/ascend/proprietary/libril.so:/system/lib/libril.so \
@@ -165,3 +182,4 @@ $(call inherit-product, build/target/product/full.mk)
 PRODUCT_BUILD_PROP_OVERRIDES += BUILD_UTC_DATE=0
 PRODUCT_NAME := generic_ascend
 PRODUCT_DEVICE := ascend
+PRODUCT_MODEL := Huawei Ascend
