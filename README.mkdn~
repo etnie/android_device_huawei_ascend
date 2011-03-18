@@ -1,0 +1,71 @@
+HOW-TO BUILD:
+=============
+
+**This short guide assumes you're on Ubuntu 10.10**
+
+Getting the (right) source
+--------------------------
+
+Ensure that you have repo installed. Download and install repo like so:
+
+    $ curl http://android.git.kernel.org/repo > ~/bin/repo
+    
+    $ chmod a+x ~/bin/repo
+
+Now, we create our build directories and pull the right source:
+
+    $ cd ~/android/system/
+    
+    $ repo init -u git://github.com/CyanogenMod/android.git -b gingerbread
+    
+    $ repo sync -j16
+
+Extract necessary binaries and proprietary files
+------------------------------------------------
+
+We will re-use some proprietary files from the original Eclair ROM. 
+The files can be extracted from any Ascend running an Eclair ROM (including Icarus 1.X):
+
+    $ cd
+    
+    $ cd ~/android/system/device/huawei/ascend/
+    
+    $ ./extract-files.sh
+
+Building CM7
+-------------
+Once thats done you can start compiling.
+
+Follow the aosp instructions on setting up the build environment. - http://source.android.com/source/download.html
+
+Android generally does not build nicely in 64-bit environments. Ubuntu apparently works well using multilib but some distros don't. I use chroot to switch to a 32-bit build environment on Arch linux (this results in a 64-bit kernel running 32-bit binaries).
+Windows user - learn to use Linux or OS X. Ubuntu installed in a VM will be easiest to setup and should get the job done.
+
+When the environment is setup, we need to grab a copy of Koush's ROM Manager. This is necessary to build CM6.
+
+    $ cd
+    
+    $ ~/android/system/vendor/cyanogen/get-rommanager
+
+Now, we build:
+
+    $ cd ~/android/system
+    
+    $ . build/envsetup.sh && brunch ascend
+
+Installing CM7
+---------------
+
+We have non-standard pagesize in our boot and recovery images. Mkbootimg has to be adjusted in order to accommodate the padding (4096), but for the sake of time, we'll just flash the images.
+
+    $ cd
+    
+    $ cd ~/android/system/out/target/product/ascend
+    
+    $ fastboot flash boot boot.img
+    
+    $ fastboot flash system system.img
+    
+    $ fastboot flash userdata userdata.img
+    
+    $ fastboot reboot

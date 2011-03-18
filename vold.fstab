@@ -1,0 +1,21 @@
+## Vold 2.0 fstab 
+#
+## - San Mehat (san@android.com)
+## 
+#
+#######################
+## Regular device mount
+##
+## Format: dev_mount <label> <mount_point> <part> <sysfs_path1...> 
+## label        - Label for the volume
+## mount_point  - Where the volume will be mounted
+## part         - Partition # (1 based), or 'auto' for first usable partition.
+## <sysfs_path> - List of sysfs paths to source devices
+######################
+#
+# Mounts the first usable partition of the specified device
+#
+# auto attempts to mount the last partition. This fails if the last partition is not fat (although the vold source includes ext2/3 support?)
+#dev_mount sdcard /mnt/sdcard auto /devices/platform/goldfish_mmc.0 /devices/platform/msm_sdcc.1/mmc_host/mmc0
+dev_mount sdcard /mnt/sdcard auto /devices/platform/msm_sdcc.1/mmc_host/mmc0
+
