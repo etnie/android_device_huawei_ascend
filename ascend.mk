@@ -51,15 +51,6 @@ PRODUCT_COPY_FILES += \
     frameworks/base/data/etc/android.hardware.wifi.xml:system/etc/permissions/android.hardware.wifi.xml \
     frameworks/base/data/etc/android.hardware.touchscreen.xml:system/etc/permissions/android.hardware.touchscreen.xml
 
-# Keychars and keylayout files
-PRODUCT_COPY_FILES += \
-    device/huawei/ascend/keychars/surf_keypad.kcm.bin:system/usr/keychars/surf_keypad.kcm.bin \
-    device/huawei/ascend/keychars/qwerty.kcm.bin:system/usr/keychars/qwerty.kcm.bin \
-    device/huawei/ascend/keychars/qwerty2.kcm.bin:system/usr/keychars/qwerty2.kcm.bin \
-    device/huawei/ascend/keylayout/AVRCP.kl:system/usr/keylayout/AVRCP.kl \
-    device/huawei/ascend/keylayout/surf_keypad.kl:system/usr/keylayout/surf_keypad.kl \
-    device/huawei/ascend/keylayout/qwerty.kl:system/usr/keylayout/qwerty.kl
-
 PRODUCT_PROPERTY_OVERRIDES := \
     wifi.interface=eth0 \
     wifi.supplicant_scan_interval=15 \
