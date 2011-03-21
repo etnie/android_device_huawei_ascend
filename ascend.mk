@@ -36,7 +36,7 @@ PRODUCT_COPY_FILES += \
 
 # Board-specific init
 PRODUCT_COPY_FILES += \
-    device/huawei/ascend/files/etc/initlogo.rle:root/initlogo.rle
+    device/huawei/ascend/files/initlogo.rle:root/initlogo.rle
 
 # DHCP config for wifi
 PRODUCT_COPY_FILES += \
