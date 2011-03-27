@@ -75,6 +75,7 @@ adb pull /system/lib/libloc_api.so ../../../vendor/huawei/$DEVICE/proprietary/li
 adb pull /system/lib/libloc_api-rpc.so ../../../vendor/huawei/$DEVICE/proprietary/libloc_api-rpc.so
 
 ## Hardware
+adb pull /system/lib/libcamera.so ../../../vendor/huawei/$DEVICE/proprietary/libcamera.so
 adb pull /system/lib/libqcamera.so ../../../vendor/huawei/$DEVICE/proprietary/libqcamera.so
 adb pull /system/lib/libmmjpeg.so ../../../vendor/huawei/$DEVICE/proprietary/libmmjpeg.so
 adb pull /system/lib/libmmipl.so ../../../vendor/huawei/$DEVICE/proprietary/libmmipl.so
