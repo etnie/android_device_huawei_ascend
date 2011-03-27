@@ -1,4 +1,5 @@
-USE_CAMERA_STUB := true
+USE_CAMERA_STUB := false
+BOARD_USE_FROYO_LIBCAMERA := true
 
 # inherit from the proprietary version
 -include vendor/huawei/ascend/BoardConfigVendor.mk
@@ -44,7 +45,7 @@ BOARD_GPS_LIBRARIES := libloc_api
 
 # MISC
 JS_ENGINE := v8
-NO_FALLBACK_FONT:=true
+#NO_FALLBACK_FONT:=true
 
 # dev:    size   erasesize  name
 # mtd0: 00500000 00020000 "boot"
