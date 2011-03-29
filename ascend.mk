@@ -38,6 +38,10 @@ PRODUCT_COPY_FILES += \
 PRODUCT_COPY_FILES += \
     device/huawei/ascend/files/initlogo.rle:root/initlogo.rle
 
+# Backing file for USB mounting
+PRODUCT_COPY_FILES += \
+    device/huawei/ascend/files/cdrom/autorun.iso:/system/cdrom/autorun.iso
+
 # DHCP config for wifi
 PRODUCT_COPY_FILES += \
     device/huawei/ascend/dhcpcd.conf:/system/etc/dhcpcd/dhcpcd.conf
