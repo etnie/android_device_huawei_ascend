@@ -88,7 +88,7 @@ PRODUCT_PROPERTY_OVERRIDES += \
 
 # media configuration xml file
 PRODUCT_COPY_FILES += \
-    device/huawei/ascend/media_profiles.xml:/system/etc/media_profiles.xml
+    device/huawei/ascend/files/etc/media_profiles.xml:/system/etc/media_profiles.xml
 
 # wpa_supplicant configuration file
 PRODUCT_COPY_FILES += \
@@ -106,7 +106,7 @@ PRODUCT_COPY_FILES += \
 
 # Sound and OMX
 PRODUCT_COPY_FILES += \
-    device/huawei/ascend/AudioFilter.csv:system/etc/AudioFilter.csv \
+    device/huawei/ascend/files/etc/AudioFilter.csv:system/etc/AudioFilter.csv \
     device/huawei/ascend/files/etc/AutoVolumeControl.txt:/system/etc/AutoVolumeControl.txt \
     vendor/huawei/ascend/proprietary/libmm-adspsvc.so:system/lib/libmm-adspsvc.so \
     vendor/huawei/ascend/proprietary/libOmxH264Dec.so:system/lib/libOmxH264Dec.so \
