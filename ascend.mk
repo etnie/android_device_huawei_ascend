@@ -1,4 +1,4 @@
-$(call inherit-product, $(SRC_TARGET_DIR)/product/languages_small.mk)
+$(call inherit-product, $(SRC_TARGET_DIR)/product/languages_full.mk)
 
 # The gps config appropriate for this device
 $(call inherit-product, device/common/gps/gps_us_supl.mk)
@@ -23,7 +23,8 @@ PRODUCT_PACKAGES += \
     gralloc.M860 \
     copybit.M860 \
     gps.M860 \
-    Gallery
+    Gallery \
+    dexpreopt
 
 # vold
 PRODUCT_COPY_FILES += \
@@ -71,11 +72,10 @@ PRODUCT_PROPERTY_OVERRIDES += \
 # The OpenGL ES API level that is natively supported by this device.
 # This is a 16.16 fixed point number
 PRODUCT_PROPERTY_OVERRIDES += \
-    ro.opengles.version=65537
+    ro.opengles.version=65536
 
-# Enable JIT by default
+# Disable dithering by default
 PRODUCT_PROPERTY_OVERRIDES += \
-    dalvik.vm.execution-mode=int:jit \
     persist.sys.use_dithering=0
 
 # disable Compcache by default. Causes stability problems.
@@ -187,3 +187,10 @@ PRODUCT_BUILD_PROP_OVERRIDES += BUILD_UTC_DATE=0
 PRODUCT_NAME := generic_ascend
 PRODUCT_DEVICE := ascend
 PRODUCT_MODEL := Huawei Ascend
+
+PRODUCT_PROPERTY_OVERRIDES += \
+    ro.com.google.clientidbase=android-huawei-us \
+    ro.com.google.locationfeatures=1 \
+    ro.cdma.home.operator.numeric=310016 \
+    ro.cdma.voicemail.number=mine \
+    ro.setupwizard.enable_bypass=1
