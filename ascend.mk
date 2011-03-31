@@ -50,6 +50,11 @@ PRODUCT_COPY_FILES += \
 PRODUCT_COPY_FILES += \
     device/huawei/ascend/ueventd.qcom.rc:root/ueventd.qcom.rc
 
+# Keylayouts
+PRODUCT_COPY_FILES += \
+    device/huawei/ascend/keychars/surf_keypad.kcm.bin:system/usr/keychars/surf_keypad.kcm.bin \
+    device/huawei/ascend/keylayout/surf_keypad.kl:system/usr/keylayout/surf_keypad.kl
+
 # Install the features available on this device.
 PRODUCT_COPY_FILES += \
     frameworks/base/data/etc/handheld_core_hardware.xml:system/etc/permissions/handheld_core_hardware.xml \
