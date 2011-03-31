@@ -107,7 +107,7 @@ PRODUCT_COPY_FILES += \
     vendor/huawei/ascend/proprietary/libqcamera.so:system/lib/libqcamera.so \
     vendor/huawei/ascend/proprietary/libmmjpeg.so:system/lib/libmmjpeg.so \
     vendor/huawei/ascend/proprietary/libmmipl.so:system/lib/libmmipl.so \
-    vendor/huawei/ascend/proprietary/init.qcom.bt.sh:system/etc/init.qcom.bt.sh \
+    vendor/huawei/ascend/proprietary/init.qcom.bt.sh:system/etc/init.qcom.bt.sh
 
 # Sound and OMX
 PRODUCT_COPY_FILES += \
@@ -125,7 +125,7 @@ PRODUCT_COPY_FILES += \
 
 # GPS
 PRODUCT_COPY_FILES += \
-    device/huawei/ascend/files/etc/gps.conf:system/etc/gps.conf
+    device/huawei/ascend/files/etc/gps.conf:system/etc/gps.conf \
     vendor/huawei/ascend/proprietary/libcommondefs.so:/system/lib/libcommondefs.so \
     vendor/huawei/ascend/proprietary/libloc_api.so:obj/lib/libloc_api.so \
     vendor/huawei/ascend/proprietary/libloc_api.so:/system/lib/libloc_api.so \
