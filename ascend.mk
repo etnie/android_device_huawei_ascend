@@ -1,7 +1,7 @@
 $(call inherit-product, $(SRC_TARGET_DIR)/product/languages_full.mk)
 
 # The gps config appropriate for this device
-$(call inherit-product, device/common/gps/gps_us_supl.mk)
+#$(call inherit-product, device/common/gps/gps_us_supl.mk)
 
 $(call inherit-product-if-exists, vendor/huawei/ascend/ascend-vendor.mk)
 
@@ -125,6 +125,7 @@ PRODUCT_COPY_FILES += \
 
 # GPS
 PRODUCT_COPY_FILES += \
+    device/huawei/ascend/files/etc/gps.conf:system/etc/gps.conf
     vendor/huawei/ascend/proprietary/libcommondefs.so:/system/lib/libcommondefs.so \
     vendor/huawei/ascend/proprietary/libloc_api.so:obj/lib/libloc_api.so \
     vendor/huawei/ascend/proprietary/libloc_api.so:/system/lib/libloc_api.so \
