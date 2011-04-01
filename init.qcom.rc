@@ -2,11 +2,11 @@
 # Thanks TomG
 
 service dhcp-service /system/bin/netcfg eth0 dhcp
-oneshot
+    oneshot
 
 on property:dev.bootcomplete=1
-stop dhcp-service
-start dhcp-service
+    stop dhcp-service
+    start dhcp-service
 
 on boot
 
