@@ -33,7 +33,7 @@ PRODUCT_COPY_FILES += \
 
 # Modules
 PRODUCT_COPY_FILES += \
-    device/huawei/ascend/prebuilt/zram.ko:system/lib/modules/2.6.29-perf/zram.ko
+    device/huawei/ascend/modules/zram.ko:system/lib/modules/2.6.29-perf/zram.ko
 
 # Board-specific init
 PRODUCT_COPY_FILES += \
