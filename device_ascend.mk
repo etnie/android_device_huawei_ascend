@@ -20,6 +20,10 @@ PRODUCT_COPY_FILES += \
 PRODUCT_PACKAGES += \
     VoiceDialer \
     Gallery
+	
+# Modules
+PRODUCT_COPY_FILES += \
+	device/huawei/ascend/prebuilt/zram.ko:system/lib/modules/2.6.29-perf/zram.ko	
 
 # Board-specific init
 PRODUCT_COPY_FILES += \
@@ -61,6 +65,10 @@ PRODUCT_PROPERTY_OVERRIDES += \
 #PRODUCT_PROPERTY_OVERRIDES += \
 #   dalvik.vm.execution-mode=int:fast
 
+# disable Compcache by default. Causes stability problems.
+PRODUCT_PROPERTY_OVERRIDES += \
+	ro.compcache.default=0 
+
 # The OpenGL ES API level that is natively supported by this device.
 # This is a 16.16 fixed point number
 PRODUCT_PROPERTY_OVERRIDES += \
@@ -81,8 +89,11 @@ PRODUCT_COPY_FILES += \
 # Proprietary hardware related
 PRODUCT_COPY_FILES += \
     vendor/huawei/ascend/proprietary/akmd2:system/bin/akmd2 \
-    vendor/huawei/ascend/proprietary/libqcamera.so:system/lib/liboemcamera.so \
+    vendor/huawei/ascend/proprietary/libcamera.so:obj/lib/libcamera.so \
+    vendor/huawei/ascend/proprietary/libcamera.so:system/lib/libcamera.so \
+    vendor/huawei/ascend/proprietary/libqcamera.so:system/lib/libqcamera.so \
     vendor/huawei/ascend/proprietary/libmmjpeg.so:system/lib/libmmjpeg.so \
+	vendor/huawei/ascend/proprietary/libmmipl.so:obj/lib/libmmipl.so \
     vendor/huawei/ascend/proprietary/libmmipl.so:system/lib/libmmipl.so \
     vendor/huawei/ascend/proprietary/init.qcom.bt.sh:system/etc/init.qcom.bt.sh \
 
@@ -164,6 +175,10 @@ PRODUCT_COPY_FILES += \
     device/huawei/ascend/prebuilt/loadecho.sh:system/wifi/loadecho.sh \
     device/huawei/ascend/prebuilt/nvram.txt:system/wifi/nvram.txt \
     device/huawei/ascend/prebuilt/udp_server:system/wifi/udp_server
+	
+## Some Huawei BS
+PRODUCT_COPY_FILES += \
+		vendor/huawei/ascend/proprietary/autorun.iso:system/cdrom/autorun.iso
 
 $(call inherit-product, build/target/product/full.mk)
 
