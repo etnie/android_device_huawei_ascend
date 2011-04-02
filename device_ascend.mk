@@ -65,10 +65,6 @@ PRODUCT_PROPERTY_OVERRIDES += \
 #PRODUCT_PROPERTY_OVERRIDES += \
 #   dalvik.vm.execution-mode=int:fast
 
-# disable Compcache by default. Causes stability problems.
-PRODUCT_PROPERTY_OVERRIDES += \
-	ro.compcache.default=0 
-
 # The OpenGL ES API level that is natively supported by this device.
 # This is a 16.16 fixed point number
 PRODUCT_PROPERTY_OVERRIDES += \
@@ -185,3 +181,11 @@ $(call inherit-product, build/target/product/full.mk)
 PRODUCT_BUILD_PROP_OVERRIDES += BUILD_UTC_DATE=0
 PRODUCT_NAME := generic_ascend
 PRODUCT_DEVICE := ascend
+PRODUCT_MODEL := Huawei Ascend
+
+PRODUCT_PROPERTY_OVERRIDES += \
+	ro.com.google.clientidbase=android-huawei-us \
+	ro.com.google.locationfeatures=1 \
+	ro.cdma.home.operator.numeric=310016 \
+	ro.cdma.voicemail.number=mine \
+	ro.setupwizard.enable_bypass=1
