@@ -21,9 +21,10 @@ PRODUCT_PACKAGES += \
     VoiceDialer \
     Gallery
 	
-# Modules
+# vold
 PRODUCT_COPY_FILES += \
-	device/huawei/ascend/prebuilt/zram.ko:system/lib/modules/2.6.29-perf/zram.ko	
+    device/huawei/ascend/vold.fstab:system/etc/vold.fstab \
+    device/huawei/ascend/vold:system/bin/vold
 
 # Board-specific init
 PRODUCT_COPY_FILES += \
