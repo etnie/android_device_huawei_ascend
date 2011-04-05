@@ -22,18 +22,22 @@
 -->
 
 <mms_config version="4">
+    
     <bool name="enabledMMS">true</bool>
-
-    <!-- Maximum message size in bytes for a MMS message -->
-    <int name="maxMessageSize">1048576</int>
-
-    <!-- Maximum height for an attached image -->
+    <bool name="AllowSendNullSms">false</bool>
+    <bool name="EnableMMSAlbum">false</bool>
+    <int name="maxMessageSize">1024000</int>
     <int name="maxImageHeight">480</int>
-
-    <!-- Maximum width for an attached image -->
     <int name="maxImageWidth">640</int>
-
-    <!-- UAProf URL -->
+    <bool name="enableMDN">true</bool>
+    <int name="defaultSMSMessagesPerThread">200</int>
+    <int name="defaultMMSMessagesPerThread">20</int>
+    <int name="minMessageCountPerThread">10</int>
+    <int name="maxMessageCountPerThread">5000</int>
     <string name="uaProfUrl">http://www.google.com/oha/rdf/ua-profile-kila.xml</string>
+    <int name="recipientLimit">10</int>
+    <int name="smsToMmsTextThreshold">2</int>
+    <int name="DEFAULT_SLIDE_DURATION">5000</int>
+    <string name="userAgent">Android-Mms</string>
 
 </mms_config>
