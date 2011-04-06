@@ -14,3 +14,12 @@ persist.rild.nitz_short_ons_1=
 persist.rild.nitz_short_ons_2=
 persist.rild.nitz_short_ons_3=
 DEVICE_PROVISIONED=1
+
+# Allow or deny tethering.
+ro.tether.denied=false
+
+# Disable fs check on boot by default.
+sys.checkfs.fat=false
+
+# Increase SKIA decode memory capability for progressive jpg file.
+ro.media.dec.jpeg.memcap=20000000

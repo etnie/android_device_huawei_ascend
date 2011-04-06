@@ -12,7 +12,8 @@ TARGET_ARCH_VARIANT := armv6j
 TARGET_NO_BOOTLOADER := true
 
 # Wifi related defines
-BOARD_WPA_SUPPLICANT_DRIVER := DWEXT
+BOARD_WPA_SUPPLICANT_DRIVER := WEXT
+WPA_SUPPLICANT_VERSION := VER_0_6_X
 WIFI_DRIVER_MODULE_PATH     := "/system/wifi/dhd.ko"
 WIFI_DRIVER_MODULE_ARG      := "firmware_path=/system/wifi/firmware.bin nvram_path=/system/wifi/nvram.txt"
 WIFI_DRIVER_MODULE_NAME     := "dhd"

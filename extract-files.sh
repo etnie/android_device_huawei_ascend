@@ -24,8 +24,8 @@ adb pull /system/bin/akmd2 ../../../vendor/huawei/$DEVICE/proprietary/akmd2
 chmod 755 ../../../vendor/huawei/$DEVICE/proprietary/akmd2
 adb pull /system/bin/qmuxd ../../../vendor/huawei/$DEVICE/proprietary/qmuxd
 chmod 755 ../../../vendor/huawei/$DEVICE/proprietary/qmuxd
-adb pull /system/bin/port-bridge ../../../vendor/huawei/$DEVICE/proprietary/port-bridge
-chmod 755 ../../../vendor/huawei/$DEVICE/proprietary/port-bridge
+adb pull /system/bin/modempre ../../../vendor/huawei/$DEVICE/proprietary/modempre
+chmod 755 ../../../vendor/huawei/$DEVICE/proprietary/modempre
 adb pull /system/bin/oem_rpc_svc ../../../vendor/huawei/$DEVICE/proprietary/oem_rpc_svc
 chmod 755 ../../../vendor/huawei/$DEVICE/proprietary/oem_rpc_svc
 adb pull /system/bin/hci_qcomm_init ../../../vendor/huawei/$DEVICE/proprietary/hci_qcomm_init

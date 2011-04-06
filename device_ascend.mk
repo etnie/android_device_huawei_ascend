@@ -1,4 +1,4 @@
-$(call inherit-product, $(SRC_TARGET_DIR)/product/languages_full.mk)
+$(call inherit-product, $(SRC_TARGET_DIR)/product/languages_small.mk)
 
 # The gps config appropriate for this device
 $(call inherit-product, device/common/gps/gps_us_supl.mk)
@@ -51,7 +51,7 @@ PRODUCT_PROPERTY_OVERRIDES := \
 # This only affects the case in which there are remembered access points,
 # but none are in range.
 PRODUCT_PROPERTY_OVERRIDES += \
-    wifi.supplicant_scan_interval=15
+    wifi.supplicant_scan_interval=60
 
 # density in DPI of the LCD of this board. This is used to scale the UI
 # appropriately. If this property is not defined, the default value is 160 dpi. 
@@ -92,6 +92,7 @@ PRODUCT_COPY_FILES += \
     vendor/huawei/ascend/proprietary/libmmjpeg.so:system/lib/libmmjpeg.so \
     vendor/huawei/ascend/proprietary/libmmipl.so:obj/lib/libmmipl.so \
     vendor/huawei/ascend/proprietary/libmmipl.so:system/lib/libmmipl.so \
+    vendor/huawei/ascend/proprietary/libmmprocess.so:system/lib/libmmprocess.so \
     vendor/huawei/ascend/proprietary/init.qcom.bt.sh:system/etc/init.qcom.bt.sh \
 
 # Sound and OMX
@@ -140,42 +141,25 @@ PRODUCT_COPY_FILES += \
     vendor/huawei/ascend/proprietary/libqmi.so:system/lib/libqmi.so \
     vendor/huawei/ascend/proprietary/libpbmlib.so:system/lib/libpbmlib.so \
     vendor/huawei/ascend/proprietary/libwpa_client.so:system/lib/libwpa_client.so \
-    vendor/huawei/ascend/proprietary/oem_rpc_svc:system/bin/oem_rpc_svc \
-    vendor/huawei/ascend/proprietary/liboem_rapi.so:system/lib/liboem_rapi.so \
-    vendor/huawei/ascend/proprietary/libhwrpc.so:system/lib/libhwrpc.so \
     vendor/huawei/ascend/proprietary/qmuxd:system/bin/qmuxd \
-    vendor/huawei/ascend/proprietary/port-bridge:system/bin/port-bridge \
     vendor/huawei/ascend/proprietary/hci_qcomm_init:system/bin/hci_qcomm_init
+
+## OEM RPC
+PRODUCT_COPY_FILES += \
+	vendor/huawei/ascend/proprietary/modempre:system/bin/modempre \
+	vendor/huawei/ascend/proprietary/oem_rpc_svc:system/bin/oem_rpc_svc \
+	vendor/huawei/ascend/proprietary/libhwrpc.so:system/lib/libhwrpc.so \
+	vendor/huawei/ascend/proprietary/liboem_rapi.so:system/lib/liboem_rapi.so
 
 ## Wifi related
 PRODUCT_COPY_FILES += \
-    device/huawei/ascend/prebuilt/ar6000.ko:system/wifi/ar6000.ko \
-    device/huawei/ascend/prebuilt/artagent:system/wifi/artagent \
-    device/huawei/ascend/prebuilt/athtcmd_ram.bin:system/wifi/athtcmd_ram.bin \
-    device/huawei/ascend/prebuilt/athwlan.bin.z77:system/wifi/athwlan.bin.z77 \
-    device/huawei/ascend/prebuilt/bcm_loadecho.sh:system/wifi/bcm_loadecho.sh \
-    device/huawei/ascend/prebuilt/bcm_loadipf.sh:system/wifi/bcm_loadipf.sh \
-    device/huawei/ascend/prebuilt/caldata.bin.ar6002:system/wifi/caldata.bin.ar6002 \
-    device/huawei/ascend/prebuilt/caldata.bin.ar6102:system/wifi/caldata.bin.ar6102 \
-    device/huawei/ascend/prebuilt/caldata.bin.c8600.ar6002:system/wifi/caldata.bin.c8600.ar6002 \
-    device/huawei/ascend/prebuilt/connectap.sh:system/wifi/connectap.sh \
-    device/huawei/ascend/prebuilt/data.patch.hw2_0.bin.ar6002:system/wifi/data.patch.hw2_0.bin.ar6002 \
-    device/huawei/ascend/prebuilt/data.patch.hw2_0.bin.ar6102:system/wifi/data.patch.hw2_0.bin.ar6102 \
-    device/huawei/ascend/prebuilt/device.bin:system/wifi/device.bin \
     device/huawei/ascend/prebuilt/dhd.ko:system/wifi/dhd.ko \
     device/huawei/ascend/prebuilt/firmware.bin:system/wifi/firmware.bin \
-    device/huawei/ascend/prebuilt/firmware_test.bin:system/wifi/firmware_test.bin \
-    device/huawei/ascend/prebuilt/iwlist:system/wifi/iwlist \
-    device/huawei/ascend/prebuilt/iwconfig:system/wifi/iwconfig \
-    device/huawei/ascend/prebuilt/iwpriv:system/wifi/iwpriv \
-    device/huawei/ascend/prebuilt/loadART.sh:system/wifi/loadART.sh \
-    device/huawei/ascend/prebuilt/loadecho.sh:system/wifi/loadecho.sh \
-    device/huawei/ascend/prebuilt/nvram.txt:system/wifi/nvram.txt \
-    device/huawei/ascend/prebuilt/udp_server:system/wifi/udp_server
+    device/huawei/ascend/prebuilt/nvram.txt:system/wifi/nvram.txt
 	
 ## Some Huawei BS
 PRODUCT_COPY_FILES += \
-		vendor/huawei/ascend/proprietary/autorun.iso:system/cdrom/autorun.iso
+	vendor/huawei/ascend/proprietary/autorun.iso:system/cdrom/autorun.iso
 
 $(call inherit-product, build/target/product/full.mk)
 
