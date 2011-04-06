@@ -78,4 +78,5 @@ adb pull /system/lib/libloc_api-rpc.so ../../../vendor/huawei/$DEVICE/proprietar
 adb pull /system/lib/libqcamera.so ../../../vendor/huawei/$DEVICE/proprietary/libqcamera.so
 adb pull /system/lib/libmmjpeg.so ../../../vendor/huawei/$DEVICE/proprietary/libmmjpeg.so
 adb pull /system/lib/libmmipl.so ../../../vendor/huawei/$DEVICE/proprietary/libmmipl.so
+adb pull /system/lib/libmmprocess.so ../../../vendor/huawei/$DEVICE/proprietary/libmmprocess.so
 adb pull /system/etc/init.qcom.bt.sh ../../../vendor/huawei/$DEVICE/proprietary/init.qcom.bt.sh
