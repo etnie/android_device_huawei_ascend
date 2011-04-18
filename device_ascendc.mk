@@ -5,7 +5,7 @@ $(call inherit-product, device/common/gps/gps_us_supl.mk)
 
 $(call inherit-product-if-exists, vendor/huawei/ascend/ascend-vendor.mk)
 
-DEVICE_PACKAGE_OVERLAYS += device/huawei/ascend/overlay
+DEVICE_PACKAGE_OVERLAYS += device/huawei/ascend/overlayc
 
 
 ifeq ($(TARGET_PREBUILT_KERNEL),)
@@ -54,7 +54,7 @@ PRODUCT_PROPERTY_OVERRIDES := \
 # This only affects the case in which there are remembered access points,
 # but none are in range.
 PRODUCT_PROPERTY_OVERRIDES += \
-    wifi.supplicant_scan_interval=60
+    wifi.supplicant_scan_interval=30
 
 # density in DPI of the LCD of this board. This is used to scale the UI
 # appropriately. If this property is not defined, the default value is 160 dpi. 
@@ -121,9 +121,12 @@ PRODUCT_COPY_FILES += \
     vendor/huawei/ascend/proprietary/libloc_api.so:system/lib/libloc_api.so \
     vendor/huawei/ascend/proprietary/libloc_api-rpc.so:system/lib/libloc_api-rpc.so
 
+# Cricket APN
+PRODUCT_COPY_FILES += \
+	device/huawei/ascend/include/capns-conf.xml:system/etc/apns-conf.xml \
+
 # Proprietary RIL related
 PRODUCT_COPY_FILES += \
-    device/huawei/ascend/include/apns-conf.xml:system/etc/apns-conf.xml \
     vendor/huawei/ascend/proprietary/libauth.so:system/lib/libauth.so \
     vendor/huawei/ascend/proprietary/libril-qc-1.so:system/lib/libril-qc-1.so \
     vendor/huawei/ascend/proprietary/libril.so:system/lib/libril.so \
@@ -167,7 +170,7 @@ PRODUCT_COPY_FILES += \
 $(call inherit-product, build/target/product/full.mk)
 
 PRODUCT_BUILD_PROP_OVERRIDES += BUILD_UTC_DATE=0
-PRODUCT_NAME := generic_ascend
+PRODUCT_NAME := generic_ascendc
 PRODUCT_DEVICE := ascend
 PRODUCT_MODEL := Huawei Ascend
 
