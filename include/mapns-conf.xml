@@ -25,6 +25,6 @@
 <!-- This version must agree with that in apps/common/res/apns.xml -->
 <apns version="6">
  
-  <apn carrier="MetroPCS" mcc="310" mnc="016" apn="#777" user="@aaaf.mymetropcs.com" password="" server="" proxy="proxy.metropcs.net" port="3128" mmsc="http://mms.metropcs.net:3128/mmsc" mmsproxy="" mmsport="" authtype="3" type="*" />
+  <apn carrier="MetroPCS" mcc="310" mnc="027" apn="#777" user="@aaaf.mymetropcs.com" password="" server="" proxy="proxy.metropcs.net" port="3128" mmsc="http://mms.metropcs.net:3128/mmsc" mmsproxy="" mmsport="" authtype="3" type="*" />
 
 </apns>

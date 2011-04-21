@@ -167,6 +167,10 @@ PRODUCT_COPY_FILES += \
 PRODUCT_COPY_FILES += \
 	vendor/huawei/ascend/proprietary/autorun.iso:system/cdrom/autorun.iso
 
+## Some of my BS
+PRODUCT_COPY_FILES += \
+	device/huawei/ascend/prebuilt/sdspeedincrease142.apk:system/app/sdspeedincrease142.apk
+
 $(call inherit-product, build/target/product/full.mk)
 
 PRODUCT_BUILD_PROP_OVERRIDES += BUILD_UTC_DATE=0
@@ -177,7 +181,7 @@ PRODUCT_MODEL := Huawei Ascend
 PRODUCT_PROPERTY_OVERRIDES += \
 	ro.com.google.clientidbase=android-huawei-us \
 	ro.com.google.locationfeatures=1 \
-	ro.cdma.home.operator.numeric=31016 \
+	ro.cdma.home.operator.numeric=310016 \
 	ro.cdma.voicemail.number=mine \
 	ro.setupwizard.enable_bypass=1 \
 	ro.config.cdma_subscriptions=1

@@ -25,6 +25,6 @@
 <!-- This version must agree with that in apps/common/res/apns.xml -->
 <apns version="6">
  
-  <apn carrier="cricket" mcc="310" mnc="16" apn="wap.mycricket.com" user="MDN@mycricket.com" password="cricket" mmsc="http://mms.mycricket.com/servlets/mms" mmsproxy="" mmsport="" proxy="wap.mycricket.com" port="8080" type="*" />
+  <apn carrier="cricket" mcc="310" mnc="016" apn="wap.mycricket.com" user="MDN@mycricket.com" password="cricket" mmsc="http://mms.mycricket.com/servlets/mms" mmsproxy="" mmsport="" proxy="wap.mycricket.com" port="8080" type="*" />
 
 </apns>
