@@ -17,7 +17,6 @@ on boot
 	write /sys/devices/system/cpu/cpufreq/ondemand/up_threshold 76
 	write /sys/devices/system/cpu/cpufreq/ondemand/down_threshold 60
 
-
 	# Setup bluetooth
 	chown bluetooth bluetooth /sys/module/bluetooth_power/parameters/power
 	chown bluetooth bluetooth /sys/class/rfkill/rfkill0/type

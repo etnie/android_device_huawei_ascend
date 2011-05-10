@@ -167,10 +167,6 @@ PRODUCT_COPY_FILES += \
 PRODUCT_COPY_FILES += \
 	vendor/huawei/ascend/proprietary/autorun.iso:system/cdrom/autorun.iso
 
-## Some of my BS
-PRODUCT_COPY_FILES += \
-	device/huawei/ascend/prebuilt/sdspeedincrease142.apk:system/app/sdspeedincrease142.apk
-
 $(call inherit-product, build/target/product/full.mk)
 
 PRODUCT_BUILD_PROP_OVERRIDES += BUILD_UTC_DATE=0
