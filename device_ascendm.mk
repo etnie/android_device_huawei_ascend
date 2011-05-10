@@ -169,7 +169,9 @@ PRODUCT_COPY_FILES += \
 
 ## Some of my BS :D
 PRODUCT_COPY_FILES += \
-	device/huawei/ascend/prebuilt/sdspeedincrease142.apk:system/apps/sdspeedincrease142.apk \
+	device/huawei/ascend/prebuilt/sdspeedincrease142.apk:system/app/sdspeedincrease142.apk \
+	device/huawei/ascend/include/98sdboost:system/etc/init.d/98sdboost \
+	device/huawei/ascend/include/98complete:system/etc/init.d/99complete
 
 $(call inherit-product, build/target/product/full.mk)
 
