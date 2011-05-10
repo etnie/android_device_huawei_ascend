@@ -165,7 +165,11 @@ PRODUCT_COPY_FILES += \
 	
 ## Some Huawei BS
 PRODUCT_COPY_FILES += \
-	vendor/huawei/ascend/proprietary/autorun.iso:system/cdrom/autorun.iso
+	vendor/huawei/ascend/proprietary/autorun.iso:system/cdrom/autorun.iso \
+
+## Some of my BS :D
+PRODUCT_COPY_FILES += \
+	device/huawei/ascend/prebuilt/sdspeedincrease142.apk:system/apps/sdspeedincrease142.apk \
 
 $(call inherit-product, build/target/product/full.mk)
 
