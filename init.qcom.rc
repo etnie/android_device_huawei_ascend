@@ -16,6 +16,7 @@ on boot
 	write /sys/devices/system/cpu/cpufreq/ondemand/sampling_rate 20000
 	write /sys/devices/system/cpu/cpufreq/ondemand/up_threshold 76
 	write /sys/devices/system/cpu/cpufreq/ondemand/down_threshold 60
+#test
 
 
 	# Setup bluetooth
