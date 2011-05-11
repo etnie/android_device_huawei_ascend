@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<EriFile VersionNumber="1357" NumberOfEriEntries="1" EriFileType="1">
+    <CallPromptId Id="0" CallPromptText="CallPromptId0" />
+    <CallPromptId Id="1" CallPromptText="CallPromptId1" />
+    <CallPromptId Id="2" CallPromptText="CallPromptId2" />
+    <EriInfo RoamingIndicator="1" IconIndex="1" IconMode="0" EriText="MetroPCS" CallPromptId="0" AlertId="0" />
+</EriFile>
